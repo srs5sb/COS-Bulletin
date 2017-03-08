@@ -44,14 +44,14 @@ var $3 = jQuery.noConflict(true);
 <!-- JQUERY AND JAVASCRIPT HERE -->
 
 <script type="text/javascript">
-$(document).ready(function(){
-  $.ajax({
+var ok = $.ajax({
     method: "POST",
     url: "https://osf.io/api/v1/search/",
-    data: {"query":{"filtered":{"query":{"query_string":{"default_field":"_all","fields":["_all","title^4","description^1.2","job^1","school^1","all_jobs^0.125","all_schools^0.125"],"query":"climate change","analyze_wildcard":true,"lenient":true}}}},"from":0,"size":10}
+    data: {"project":"39","logger":"javascript","platform":"javascript","request":{"headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"},"url":"https://osf.io/search/?q=climate%20change"},"message":"Error sending Keen data to pageviews: <An error occurred!>","extra":{"payload":{},"session:duration":779},"event_id":"e4ff27c2de2d4d09b7e549e4df473096"}
+  }).then(function(response) {
+  	debugger;
+  	$(#r1title).append(.response["0"].title);
   })
-  $("#r1title").load(.results["0"].title)
-});
 </script>
 
 <!-- END JQUERY AND JAVASCRIPT -->
@@ -120,7 +120,7 @@ table#searchlabel {
         <nav class="navbar navbar-inverse navbar-fixed-top" id="navbarScope" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -154,7 +154,7 @@ table#searchlabel {
         <a href = "https://osf.io">OSF Framework</a>
 
         <!-- ko ifnot: onSearchPage -->
-        <li class="hidden-xs" data-bind="click : toggleSearch, css: searchCSS">
+        <li class="visible-xs" data-bind="click : toggleSearch, css: searchCSS">
             <a class="">
                 <span rel="tooltip" data-placement="bottom" title="Search OSF" class="fa fa-search fa-lg"></span>
             </a>
@@ -174,17 +174,16 @@ table#searchlabel {
 </nav>
 <!-- ko ifnot: onSearchPage -->
 
-<div class="osf-search" data-bind="fadeVisible: showSearch" style="display: none">
+<div class="osf-search" data-bind="fadeVisible: showSearch" style="">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <form class="input-group" data-bind="submit: submit">
-                    <input id="searchPageFullBar" name="search-placeholder" type="text" class="osf-search-input form-control" placeholder="Search" data-bind="value: query, hasFocus: true">
+                    <input id="searchPageFullBar" name="search-placeholder" type="text" class="osf-search-input form-control" placeholder="Search" data-bind="value: query, hasFocus: false">
                     <label id="searchBarLabel" class="search-label-placeholder" for="search-placeholder">Search</label>
                     <span class="input-group-btn">
                         <button type="button" class="btn osf-search-btn" data-bind="click: submit"><i class="fa fa-circle-arrow-right fa-lg"></i></button>
                         <button type="button" class="btn osf-search-btn" data-toggle="modal" data-target="#search-help-modal"><i class="fa fa-question fa-lg"></i></button>
-                        <button type="button" class="btn osf-search-btn" data-bind="visible: showClose, click : toggleSearch"><i class="fa fa-times fa-lg"></i></button>
                     </span>
 
                 </form>
@@ -196,7 +195,6 @@ table#searchlabel {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"></span>×</button>
                 <h3 class="modal-title">Search help</h3>
             </div>
             <div class="modal-body">
@@ -208,9 +206,7 @@ table#searchlabel {
                     <li><a href="https://osf.io/search/?q=tags%3A%28psychology%29">tags:(psychology)</a></li>
                 </ul>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
+            
         </div>
     </div>
 </div>
