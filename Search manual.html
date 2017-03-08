@@ -45,11 +45,7 @@ var $3 = jQuery.noConflict(true);
 
 <script type="text/javascript">
 $(document).ready(function(){
-  $.ajax({
-    method: "POST",
-    url: "https://osf.io/api/v1/search/",
-    data: {"query":{"filtered":{"query":{"query_string":{"default_field":"_all","fields":["_all","title^4","description^1.2","job^1","school^1","all_jobs^0.125","all_schools^0.125"],"query":"climate change","analyze_wildcard":true,"lenient":true}}}},"from":0,"size":10}
-  })
+    // here
 });
 </script>
 
@@ -237,22 +233,38 @@ table#searchlabel {
     <th>Title</th>
     <th>Year</th>
     <th>Author(s)</th>
-    <th>Publisher</th>
+    <th>Type</th>
     <th>Description</th>
 </tr>
 <tr>
-    <td><div id="r1title"></div></td>
-    <td><div id="r1date"></div></td>
-    <td><div id="r1auth"></div></td>
-    <td><div id="r1type"></div></td>
+    <td><div id="r1title"><a href="https://osf.io/3s2uk/">Climate Change</a></div></td>
+    <td><div id="r1date">2016-09-28</div></td>
+    <td><div id="r1auth"><a href="https://osf.io/kcj6d/">Bridget McGlynn</a></div></td>
+    <td><div id="r1type">Project</div></td>
     <td><div id="r1desc"></div></td>
 </tr>
+<tr>
+    <td><div id="r2title"><a href="https://osf.io/kb3dm/">Climate Change Research Notebook</a></div></td>
+    <td><div id="r2date">2016-09-13</div></td>
+    <td><div id="r2auth"><a href="https://osf.io/sj2fr/">Jordan Aharoni</a> - <a href="https://osf.io/6dnpj/">Matt Anderson</a> - <a href="https://osf.io/vr3gd/">Matthew Nugent</a> - <a href="https://osf.io/uhs3f/">Varsha Jayasankar</a></div></td>
+    <td><div id="r2type">Project</div></td>
+    <td><div id="r2desc">This project is a research notebook for the iSci 3A12 Climate Change module.</div></td>
+</tr>
+<tr>
+    <td><div id="r3title"><a href="https://osf.io/5hw69/">Changing Climate Attitudes</a></div></td>
+    <td><div id="r3date">2016-02-16</div></td>
+    <td><div id="r3auth"><a href="https://osf.io/ao8ig/">Dav Clark</a></div></td>
+    <td><div id="r3type">Project</div></td>
+    <td><div id="r3desc">A collection of openly shared data from my PhD dissertation research (mostly published elsewhere in various articles).</div></td>
+</tr>
+<tr>
+    <td><div id="r4title"><a href="https://osf.io/7yctx/">Climate Change - Individual Notebook</a></div></td>
+    <td><div id="r4date">2016-09-27</div></td>
+    <td><div id="r4auth"><a href="https://osf.io/2ekxr/">Angela Gupta</a></div></td>
+    <td><div id="r4type">Project</div></td>
+    <td><div id="r4desc">ISCI 3A12 Project</div></td>
+</tr>
 </table> 
-
-
-<!-- END TABLE OF RESULTS -->
-
-
 
 
 <div class="container">
