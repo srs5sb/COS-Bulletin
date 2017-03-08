@@ -2,7 +2,7 @@
 <!-- saved from url=(0015)https://osf.io/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>OSF | Bulletin</title>
+<title>OSF | Home</title>
 <meta name="google-site-verification" content="8KhqrnI0nmzqKiY5MnbCsC8JV4aY5GNqOgJyQAw5lpA">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="
@@ -22,7 +22,6 @@ Raven.config("https://315af0bcc90a402c8d207c5953b4423c@sentry.cos.io/39", {}).in
 <link rel="stylesheet" href="./OSF _ Home_files/base.css">
 <link rel="stylesheet" href="./OSF _ Home_files/style.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="./OSF _ Home_files/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/static/vendor/bower_components/jquery/dist/jquery.min.js">\x3C/script>')</script>
 <script src="./OSF _ Home_files/jquery-ui.min.js"></script>
@@ -39,21 +38,6 @@ var $3 = jQuery.noConflict(true);
 <style type="text/css">.citations .panel-heading .permalink{vertical-align:middle;color:#777}#citationText{display:none;margin-top:15px;margin-bottom:0}.citation-picker .select2-container{width:100%}.formatted-citation{white-space:pre-wrap;word-break:keep-all}.citation-widget #tb-tbody{height:300px}</style>
 <style type="text/css">.tt-dropdown-menu{max-height:300px;overflow-y:auto}</style>
 
-
-
-<!-- JQUERY AND JAVASCRIPT HERE -->
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $.ajax({
-    method: "POST",
-    url: "https://osf.io/api/v1/search/",
-    data: {"query":{"filtered":{"query":{"query_string":{"default_field":"_all","fields":["_all","title^4","description^1.2","job^1","school^1","all_jobs^0.125","all_schools^0.125"],"query":"climate change","analyze_wildcard":true,"lenient":true}}}},"from":0,"size":10}
-  })
-});
-</script>
-
-<!-- END JQUERY AND JAVASCRIPT -->
 
 
 
@@ -219,6 +203,7 @@ table#searchlabel {
 </div>
 
 
+
 <!-- SEARCH RESULTS -->
 <table id="searchlabel">
   <tr>
@@ -241,18 +226,20 @@ table#searchlabel {
     <th>Description</th>
 </tr>
 <tr>
-    <td><div id="r1title"></div></td>
-    <td><div id="r1date"></div></td>
-    <td><div id="r1auth"></div></td>
-    <td><div id="r1type"></div></td>
-    <td><div id="r1desc"></div></td>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+    <td>Smith</td>
+    <td>science</td>
+</tr>
+<tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+    <td>Smith</td>
+    <td>50</td>
 </tr>
 </table> 
-
-
-<!-- END TABLE OF RESULTS -->
-
-
 
 
 <div class="container">
