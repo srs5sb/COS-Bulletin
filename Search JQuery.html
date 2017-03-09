@@ -47,7 +47,26 @@ var $3 = jQuery.noConflict(true);
 $(document).ready(function(){
   $.get("http://api.osf.io/v2/search/?q=climate change", function(data) {
     console.log(data);
-    debugger;
+  }).then(function(data) {
+    document.getElementById("r1title").innerHTML = data.data["0"].attributes.title;
+    document.getElementById("r1date").innerHTML = data.data["0"].attributes.date_created;
+    document.getElementById("r1type").innerHTML = data.data["0"].attributes.category;
+    document.getElementById("r1desc").innerHTML = data.data["0"].attributes.description;
+
+    document.getElementById("r2title").innerHTML = data.data["1"].attributes.title;
+    document.getElementById("r2date").innerHTML = data.data["1"].attributes.date_created;
+    document.getElementById("r2type").innerHTML = data.data["1"].attributes.category;
+    document.getElementById("r2desc").innerHTML = data.data["1"].attributes.description;
+    
+    document.getElementById("r3title").innerHTML = data.data["2"].attributes.title;
+    document.getElementById("r3date").innerHTML = data.data["2"].attributes.date_created;
+    document.getElementById("r3type").innerHTML = data.data["2"].attributes.category;
+    document.getElementById("r3desc").innerHTML = data.data["2"].attributes.description;
+
+    document.getElementById("r4title").innerHTML = data.data["3"].attributes.title;
+    document.getElementById("r4date").innerHTML = data.data["3"].attributes.date_created;
+    document.getElementById("r4type").innerHTML = data.data["3"].attributes.category;
+    document.getElementById("r4desc").innerHTML = data.data["3"].attributes.description;
   })
 })
 </script>
@@ -230,9 +249,9 @@ table#searchlabel {
 <table id="results">
   <tr>
       <th>Title</th>
-      <th>Year</th>
+      <th>Date</th>
       <th>Author(s)</th>
-      <th>Publisher</th>
+      <th>Type</th>
       <th>Description</th>
   </tr>
   <tr>
@@ -241,6 +260,27 @@ table#searchlabel {
       <td><div id="r1auth"></div></td>
       <td><div id="r1type"></div></td>
       <td><div id="r1desc"></div></td>
+  </tr>
+  <tr>
+      <td><div id="r2title"></div></td>
+      <td><div id="r2date"></div></td>
+      <td><div id="r2auth"></div></td>
+      <td><div id="r2type"></div></td>
+      <td><div id="r2desc"></div></td>
+  </tr>
+  <tr>
+      <td><div id="r3title"></div></td>
+      <td><div id="r3date"></div></td>
+      <td><div id="r3auth"></div></td>
+      <td><div id="r3type"></div></td>
+      <td><div id="r3desc"></div></td>
+  </tr>
+  <tr>
+      <td><div id="r4title"></div></td>
+      <td><div id="r4date"></div></td>
+      <td><div id="r4auth"></div></td>
+      <td><div id="r4type"></div></td>
+      <td><div id="r4desc"></div></td>
   </tr>
 </table> 
 
