@@ -44,15 +44,14 @@ var $3 = jQuery.noConflict(true);
 <!-- JQUERY AND JAVASCRIPT HERE -->
 
 <script type="text/javascript">
-var ok = $.ajax({
-    method: "POST",
-    url: "https://osf.io/api/v1/search/",
-    data: {"project":"39","logger":"javascript","platform":"javascript","request":{"headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"},"url":"https://osf.io/search/?q=climate%20change"},"message":"Error sending Keen data to pageviews: <An error occurred!>","extra":{"payload":{},"session:duration":779},"event_id":"e4ff27c2de2d4d09b7e549e4df473096"}
-  }).then(function(response) {
-  	debugger;
-  	$(#r1title).append(.response["0"].title);
-  })
+$(document).ready(function(){
+  $.get("http://osf.io/api/v2/search/?=climate change", function(data)) {
+    console.log(data);
+    debugger;
+  }
+}
 </script>
+
 
 <!-- END JQUERY AND JAVASCRIPT -->
 
@@ -262,8 +261,6 @@ table#searchlabel {
 </div>
 
 </div>
-
-
 
 
 
