@@ -73,11 +73,26 @@ h6 {
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#67a3bf', endColorstr='#000000', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
-    height: 633px;
+    height: auto;
     color: #fff;
     padding-top: 100px;
     position: relative;
 }
+
+div.fill-screen {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+img.make-it-fit {
+    max-width: 99%;
+    max-height: 99%;
+}
+
 #home-hero h1 {
     font-size: 3.5em;
     margin-bottom: -15px;
